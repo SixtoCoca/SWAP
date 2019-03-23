@@ -10,8 +10,6 @@ En esta práctica hay 2 objetivos:
 
 En primer lugar he instalado 2 maquinas virtuales ubuntuserver16 con Apache+PHP+MySQL
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/capturaip.png)
-
 Una vez instaladas he tenido que crear en VirtualBox una red solo-anfitrion para que se puedan
 conectar entre ellas.
 
@@ -19,6 +17,7 @@ conectar entre ellas.
 
 Modificamos el archivo /etc/network/interfaces añadiendo lo siguiente(en ambas maquinas virtuales cambiando en cada uno el parametro addres)
 
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/capturaip.png)
 
 Una vez hecho esto ya esta listo nuestras maquinas para poder acceder una otra usando ssh o utilizando cURL.
 
