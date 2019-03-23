@@ -24,8 +24,8 @@ Una vez hecho esto ya esta listo nuestras maquinas para poder acceder una otra u
 
 Comprobamos que ya funciona el ssh:
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/ssh.png)
 
 Comprobamos que funciona el cURL:
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/curl.png)
