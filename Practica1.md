@@ -2,9 +2,9 @@
 
 En esta práctica hay 2 objetivos:
 
-	1. acceder por ssh de una máquina a otra
+1. acceder por ssh de una máquina a otra
 
-	2. acceder mediante la herramienta curl desde una máquina a la otra
+2. acceder mediante la herramienta curl desde una máquina a la otra
 
 ---
 
@@ -20,4 +20,12 @@ conectar entre ellas.
 Modificamos el archivo /etc/network/interfaces añadiendo lo siguiente(en ambas maquinas virtuales cambiando en cada uno el parametro addres)
 
 
-Una vez hecho esto ya esta listo nuestras maquinas para poder acceder una otra usando ssh o utilizando cURL
+Una vez hecho esto ya esta listo nuestras maquinas para poder acceder una otra usando ssh o utilizando cURL.
+
+Comprobamos que ya funciona el ssh:
+
+![img]()
+
+Comprobamos que funciona el cURL:
+
+![img]()
