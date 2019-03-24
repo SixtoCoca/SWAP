@@ -19,17 +19,17 @@ Para clonar una carpeta utilizamos la siguiente instruccion
 
 con esta orden clonamos la carpeta /var/www/
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/copiaP2.png)
 
 Para configurar el ssh sin necesitar contraseña primero genero la clave publica
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/generarkeygenP2.png)
 
 Luego en la otra maquina copio el id usando 
 
 	ssh-copy-id ipdemaquinaprincipal
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/copiaidP2.png)
 
 Ya se puede acceder sin que pida la contraseña
 
@@ -37,5 +37,5 @@ Para establecer una tarea cron hay que modificar el archivo /etc/crontab poniend
 
 	*	*	* * *	sixto	rsync -avz -e ssh 192.168.1.20:/var/www/ /var/www/
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/crontabP2.png)
 
