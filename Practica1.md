@@ -15,7 +15,7 @@ conectar entre ellas.
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/redvirtualbox.png)
 
-Modificamos el archivo /etc/network/interfaces añadiendo lo siguiente(en ambas maquinas virtuales cambiando en cada uno el parametro addres)
+Modificamos el archivo /etc/network/interfaces añadiendo lo siguiente(en ambas maquinas virtuales cambiando en cada uno el parámetro addres)
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/capturaip.png)
 

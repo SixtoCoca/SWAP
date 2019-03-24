@@ -13,7 +13,7 @@ actualizado el contenido del directorio /var/www entre las dos máquinas
 
 ---
 
-Para clonar una carpeta utilizamos la siguiente instruccion
+Para clonar una carpeta utilizamos la siguiente instrucción
 	
 	rsync -avz -e ssh 192.168.1.20:/var/www/ /var/www/
 
@@ -21,7 +21,7 @@ con esta orden clonamos la carpeta /var/www/
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/copiaP2.png)
 
-Para configurar el ssh sin necesitar contraseña primero genero la clave publica
+Para configurar el ssh sin necesitar contraseña primero genero la clave pública
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/generarkeygenP2.png)
 
