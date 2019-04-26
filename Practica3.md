@@ -50,5 +50,27 @@ Una vez instalada una nueva máquina virtual sin tener instalado apache.Instalam
 
 Ahora tenemos que configurar el fichero /etc/haproxy/haproxy.cfg:
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/resultadonginxponderacion.png)
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/confhaproxy.png)
+
+Comprobamos que funciona:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/funcionahaproxy.png)
+
+## Someter a una alta carga el servidor balanceado
+
+Para someter una alta carga, una vez instalado el Apache Benchmark, ejecuto este comando(donde IP es la ip del baleanceador):
+
+	ab -n 1000 -c 10 http://IP/
+
+Los resultados con nginx son:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/pruebanginx2.png)
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/nginx2.png)
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/nginx3.png)
+
+Los resultados con haproxy son:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/resultadoshaproxy.png)
 
