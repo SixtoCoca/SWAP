@@ -62,7 +62,7 @@ Para someter una alta carga, una vez instalado el Apache Benchmark, ejecuto este
 
 	ab -n 1000 -c 10 http://IP/
 
-Los resultados con nginx son:
+Los resultados con nginx son(están en 3 capturas porque no cabía bien en 1):
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/pruebanginx2.png)
 
