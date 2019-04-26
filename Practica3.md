@@ -13,8 +13,12 @@ Benchmark, teniendo primero nginx y después haproxy.
 
 ## Servidor web nginx.
 
-Una vez instalada una nueva máquina virtual sin tener instalado apache.Instalamos nginx sobre esta máquina:
+Una vez instalada una nueva máquina virtual sin tener instalado apache.Instalamos nginx sobre esta máquina, con los siguientes comandos instalmos y ejecutamos el nginx:
 
 	sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove
 	sudo apt-get install nginx
 	sudo systemctl start nginx
+
+Ahora tenemos que configurar el fichero /etc/nginx/conf.d/default.conf:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/capturaconfiguracionnginx.png)
