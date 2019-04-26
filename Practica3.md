@@ -22,3 +22,15 @@ Una vez instalada una nueva máquina virtual sin tener instalado apache.Instalam
 Ahora tenemos que configurar el fichero /etc/nginx/conf.d/default.conf:
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/capturaconfiguracionnginx.png)
+
+Tambien tenemos que eliminar la línea que configura ngnix como servidor web en el archivo /etc/nginx/nginx.conf
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/capturaconfiguracionnginx.png)
+
+Añadiendo esta configuración al fichero al reiniciar el servicio ya funcionaría correctamente el baleanceador con nginx.
+
+Lo comprobamos con esta configuracion(Round-robin):
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/resultadobalanceadongixroundrobin.png)
+
+Cambiamos la configuracion de el fichero /etc/nginx/conf.d/default.conf:
