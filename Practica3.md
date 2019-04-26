@@ -70,7 +70,22 @@ Los resultados con nginx son(están en 3 capturas porque no cabía bien en 1):
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/nginx3.png)
 
+Podemos observar en los top de las maquinas como el baleanceador reparte los procesos a las 2 maquinas:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/M1nginx.png)
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/M2nginx.png)
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/balanceadornginx.png)
+
 Los resultados con haproxy son:
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/resultadoshaproxy.png)
 
+Igual que con nginx utilizamos los tops:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/haproxym1.png)
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/haproxy%2C2.png)
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/balanceadorhaproxy.png)
