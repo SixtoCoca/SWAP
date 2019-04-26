@@ -25,7 +25,7 @@ Ahora tenemos que configurar el fichero /etc/nginx/conf.d/default.conf:
 
 Tambien tenemos que eliminar la línea que configura ngnix como servidor web en el archivo /etc/nginx/nginx.conf
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/capturaconfiguracionnginx.png)
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/nginxconfcomentado.png)
 
 Añadiendo esta configuración al fichero al reiniciar el servicio ya funcionaría correctamente el baleanceador con nginx.
 
@@ -33,4 +33,22 @@ Lo comprobamos con esta configuracion(Round-robin):
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/resultadobalanceadongixroundrobin.png)
 
-Cambiamos la configuracion de el fichero /etc/nginx/conf.d/default.conf:
+Cambiamos la configuracion de el fichero /etc/nginx/conf.d/default.conf para que sea por ponderación:.
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/nginxweight.png)
+
+Lo comprobamos con esta configuracion(Ponderacion):
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/resultadonginxponderacion.png)
+
+
+## Servidor web haproxy.
+
+Una vez instalada una nueva máquina virtual sin tener instalado apache.Instalamos haproxy sobre esta máquina, con los siguientes comandos instalmos:
+
+	sudo apt-get install haproxy
+
+Ahora tenemos que configurar el fichero /etc/haproxy/haproxy.cfg:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/resultadonginxponderacion.png)
+
