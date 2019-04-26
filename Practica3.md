@@ -1,0 +1,20 @@
+# Practica 3. Balanceo de carga
+
+En esta práctica hay 3 objetivos:
+
+1. configurar una máquina e instalar el nginx como balanceador de carga
+
+2. configurar una máquina e instalar el haproxy como balanceador de carga
+
+3. someter a la granja web a una alta carga, generada con la herramienta Apache
+Benchmark, teniendo primero nginx y después haproxy.
+
+---
+
+## Servidor web nginx.
+
+Una vez instalada una nueva máquina virtual sin tener instalado apache.Instalamos nginx sobre esta máquina:
+
+	sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove
+	sudo apt-get install nginx
+	sudo systemctl start nginx
