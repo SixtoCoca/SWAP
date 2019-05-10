@@ -29,12 +29,12 @@ Copiamos la clave generada en las demas maquinas principales y en el baleanceado
 
 Para configurar el cortafuegos vamos a crear un script usando iptables el script es el siguiente:
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/scriptiptables.png)
 
 Para que este script se ejecute cada vez que se arranca la maquina(y por tanto tengamos el cortafuegos siempre activo) añadimos lo siguiente en el fichero /etc/rc.local
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/rc.local.png)
 
 Con esto ya podemos ver que nos funciona el cortafuegos en la maquina instalada.
 
-![img]()
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/iptablesm1.png)
