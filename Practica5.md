@@ -21,17 +21,25 @@ Creamos la base de datos con algunos datos siguiendo el guion:
 
 Quedando la base de datos asi:
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/default-ssl.png)
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/basededatos.png)
 
-Reiniciamos apache y hacemos peticiones HTTPS.
+## Replicar una BD usando mysqldump
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/curlHTTPS.png)
+Primero bloqueamos la base de datos para que no se actualize:
 
-Copiamos la clave generada en las demas maquinas principales y en el baleanceador, no se tienen que generar otras se tienen que copiar de esta.En el baleanceador ngix en el archivo /etc/n/ginx/conf.d/default.conf añadimos lo siguiente.
+	mysql> FLUSH TABLES WITH READ LOCK;
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/default.conf.png)
+Luego utilizamos mysqldump para guardar los datos:
 
-Para configurar el cortafuegos vamos a crear un script usando iptables el script es el siguiente:
+	mysqldump contactos -u root -p > /tmp/contactos.sql
+
+Luego desbloqueamos las tablas:
+
+	mysql> UNLOCK TABLES;
+
+En la maquina 2 copiamos el archivo .sql con tos uss datos guardados en la máquina 1.
+
+	scp 192.168.1.10:/tmp/contactos.sql /tmp/
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/scriptiptables.png)
 
