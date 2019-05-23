@@ -67,7 +67,7 @@ Creamos un usuario y le damos permiso para replicar en la maquina maestra:
 
 Mostrando el show master status:
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/contactosscp.png)
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/showmasterstatus.png)
 
 En la maquina esclava introducimos los datos del maestro vistos en show master status:
 
@@ -76,6 +76,8 @@ En la maquina esclava introducimos los datos del maestro vistos en show master s
 	MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=501,
 	MASTER_PORT=3306;
 
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/ESCLAVO.png)
+
 Arrancamos el esclavo utilizando y desbloqueamos las tablas:
 
 	mysql> START SLAVE;
@@ -83,4 +85,4 @@ Arrancamos el esclavo utilizando y desbloqueamos las tablas:
 
 Vemos el SHOW SLAVE STATUS(vemos que la variable Seconds_Behind_Master esta a 0):
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/contactosscp.png)
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/secondbehindmaster.png)
