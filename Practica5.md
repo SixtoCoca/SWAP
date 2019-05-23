@@ -41,12 +41,46 @@ En la maquina 2 copiamos el archivo .sql con tos uss datos guardados en la máqu
 
 	scp 192.168.1.10:/tmp/contactos.sql /tmp/
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/scriptiptables.png)
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/contactosscp.png)
 
-Para que este script se ejecute cada vez que se arranca la maquina(y por tanto tengamos el cortafuegos siempre activo) añadimos lo siguiente en el fichero /etc/rc.local
+## Replicar una BD mediante una configuración maestro-esclavo
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/rc.local.png)
+Comprobamos que tienen la mismas version las maquinas virtuales.
 
-Con esto ya podemos ver que nos funciona el cortafuegos en la maquina instalada.
+Añadimos esta configuración en el archivo /etc/mysql/mysql.conf.d/mysqld.cnf:
 
-![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/iptablesm1.png)
+	#bind-address 127.0.0.1
+	log_error = /var/log/mysql/error.log
+	server-id = 1
+	log_bin = /var/log/mysql/bin.log
+
+Reiniciamos el servicio. Configuramos el esclavo poniendo server-id=2 y reiniciamos el servicio esclavo.
+
+Creamos un usuario y le damos permiso para replicar en la maquina maestra:
+
+	mysql> CREATE USER esclavo IDENTIFIED BY 'esclavo';
+	mysql> GRANT REPLICATION SLAVE ON *.* TO 'esclavo'@'%'
+	IDENTIFIED BY 'esclavo';
+	mysql> FLUSH PRIVILEGES;	
+	mysql> FLUSH TABLES;
+	mysql> FLUSH TABLES WITH READ LOCK;
+
+Mostrando el show master status:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/contactosscp.png)
+
+En la maquina esclava introducimos los datos del maestro vistos en show master status:
+
+	mysql> CHANGE MASTER TO MASTER_HOST='192.168.31.200',
+	MASTER_USER='esclavo', MASTER_PASSWORD='esclavo',
+	MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=501,
+	MASTER_PORT=3306;
+
+Arrancamos el esclavo utilizando y desbloqueamos las tablas:
+
+	mysql> START SLAVE;
+	mysql> UNLOCK TABLES
+
+Vemos el SHOW SLAVE STATUS(vemos que la variable Seconds_Behind_Master esta a 0):
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/contactosscp.png)
