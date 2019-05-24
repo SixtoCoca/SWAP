@@ -28,18 +28,18 @@ En lso clientes instalamos las herramientas:
 
 Creamos la carpeta carpetacliente
 
-!img[]
+!img[https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/crearcarpetaclienteP6.png]
 
 Enlazamas la carpeta carpetacliente con la compartida por el servidor
 
-!img[]
+!img[https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/vincularcarpetaclienteP6.png]
 
 Para hacer la configuracion permanente añadimos la siguiente línea al fichero /etc/fstab:
 
 	10.10.10.13:/dat/compartida /home/usuario/carpetacliente/auto,noatime,nolock,bg,nfsvers=3,intr,tcp,actimeo=1800
 
-!img[]
+!img[https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/etcfstabP6.png]
 
 Ejemplo en el que vemos las 2 maquinas clientes creamos un archivo en 1 y luego vemos como se replica en la otra(al llegar a la otra ha tenido que pasar por el servidor).
 
-!img[]
+!img[https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/ejemploP6.png]
