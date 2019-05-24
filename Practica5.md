@@ -71,9 +71,9 @@ Mostrando el show master status:
 
 En la maquina esclava introducimos los datos del maestro vistos en show master status:
 
-	mysql> CHANGE MASTER TO MASTER_HOST='192.168.31.200',
+	mysql> CHANGE MASTER TO MASTER_HOST='192.168.1.10',
 	MASTER_USER='esclavo', MASTER_PASSWORD='esclavo',
-	MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=501,
+	MASTER_LOG_FILE='bin.000001', MASTER_LOG_POS=154,
 	MASTER_PORT=3306;
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/ESCLAVO.png)
@@ -86,3 +86,7 @@ Arrancamos el esclavo utilizando y desbloqueamos las tablas:
 Vemos el SHOW SLAVE STATUS(vemos que la variable Seconds_Behind_Master esta a 0):
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/secondbehindmaster.png)
+
+Aqui vemos como se replica:
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/solucionfinal.png)
