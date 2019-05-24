@@ -11,7 +11,7 @@ En esta práctica hay 4 objetivos:
 
 ---
 
-Creamos la base de datos con algunos datos siguiendo el guion:
+Creamos la base de datos con algunos datos siguiendo el guión:
 	
 	mysql> create database contactos;
 	mysql> use contactos;
@@ -42,6 +42,11 @@ En la maquina 2 copiamos el archivo .sql con tos uss datos guardados en la máqu
 	scp 192.168.1.10:/tmp/contactos.sql /tmp/
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/contactosscp.png)
+
+Y restauramos los datos contenidos en la bd.(tienen distintos nombres porque se me olvidó añadir esta y luego metí otra con otro nombre)
+
+![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/restaurardatabasep5.png)
+
 
 ## Replicar una BD mediante una configuración maestro-esclavo
 
@@ -87,6 +92,6 @@ Vemos el SHOW SLAVE STATUS(vemos que la variable Seconds_Behind_Master esta a 0)
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/secondbehindmaster.png)
 
-Aqui vemos como se replica:
+Aquí vemos como se replica:
 
 ![img](https://github.com/SixtoCoca/SWAP/blob/master/Imagenes/solucionfinal.png)
